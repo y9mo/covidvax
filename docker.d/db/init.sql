@@ -1,0 +1,5 @@
+CREATE USER admin WITH PASSWORD 'admin-pwd';
+CREATE DATABASE "covidvax";
+CREATE DATABASE "covidvax-test";
+GRANT ALL PRIVILEGES ON DATABASE "covidvax" TO admin;
+GRANT ALL PRIVILEGES ON DATABASE "covidvax-test" TO admin;

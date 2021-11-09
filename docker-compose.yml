@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+
+  db:
+    image: postgres:13.4-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./docker.d/db/init.sql:/docker-entrypoint-initdb.d/init-db.sql"
+    environment:
+      POSTGRES_PASSWORD: example

@@ -25,6 +25,7 @@ CREATE TYPE appointment_status AS ENUM ('awaiting confirmation', 'confirmed');
 CREATE TABLE IF NOT EXISTS appointments (
     id                    uuid NOT NULL PRIMARY KEY,
     treatment_center_id   uuid REFERENCES treatment_centers (id),
+    start_time            timestamptz,
     created_at            timestamptz DEFAULT NOW(),
     updated_at            timestamptz
  );

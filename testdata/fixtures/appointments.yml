@@ -1,0 +1,47 @@
+- id: eecce415-2d4c-440d-ac90-9780a3bd3371
+  treatment_center_id: 52b2edf2-a380-4436-9f98-b70f78f174ef
+  start_time: 2021-11-13 08:00:00
+  created_at: 2021-11-12 14:59:59
+  updated_at: 2021-11-12 14:59:59
+
+- id: eab38294-8b76-410c-8058-3e152e64dced
+  treatment_center_id: 52b2edf2-a380-4436-9f98-b70f78f174ef
+  start_time: 2021-11-13 09:00:00
+  created_at: 2021-11-12 15:59:59
+  updated_at: 2021-11-12 15:59:59
+
+- id: b7269eb2-b5f9-46a5-ae79-87916c67e50a
+  treatment_center_id: 52b2edf2-a380-4436-9f98-b70f78f174ef
+  start_time: 2021-11-13 10:00:00
+  created_at: 2021-11-12 16:59:59
+  updated_at: 2021-11-12 16:59:59
+
+- id: 96261e44-6d19-4d12-af0b-f28f56f665e2
+  treatment_center_id: 52b2edf2-a380-4436-9f98-b70f78f174ef
+  start_time: 2021-11-13 11:00:00
+  created_at: 2021-11-12 16:59:59
+  updated_at: 2021-11-12 16:59:59
+
+- id: cf3101c4-e848-499b-9d40-24eff4479cf2
+  treatment_center_id: 0de6c3f4-2451-4ec2-989c-1b6ee8ba7dc8
+  start_time: 2021-11-13 11:00:00
+  created_at: 2021-11-10 12:59:59
+  updated_at: 2021-11-10 12:59:59
+
+- id: 83a18a46-babe-414a-b873-035459e01a90
+  treatment_center_id: 10063726-d378-472c-9b50-22a48331635d
+  start_time: 2021-11-12 08:00:00
+  created_at: 2021-11-10 14:59:59
+  updated_at: 2021-11-10 14:59:59
+
+- id: 5edac3af-6805-469e-ae94-f9610c09516a
+  treatment_center_id: 10063726-d378-472c-9b50-22a48331635d
+  start_time: 2021-11-11 09:00:00
+  created_at: 2021-11-10 14:59:59
+  updated_at: 2021-11-10 14:59:59
+
+- id: 4cdb532d-bfe8-4af6-b9b5-d5078985a350
+  treatment_center_id: 10063726-d378-472c-9b50-22a48331635d
+  start_time: 2021-11-13 18:00:00
+  created_at: 2021-11-11 14:59:59
+  updated_at: 2021-11-11 14:59:59

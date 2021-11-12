@@ -1,0 +1,27 @@
+- id: 52b2edf2-a380-4436-9f98-b70f78f174ef
+  name: Center Two
+  address: somewhere
+  phone: "0102030405"
+  created_at: 2021-10-31 12:59:59
+  updated_at: 2021-10-31 15:04:34
+
+- id: 0de6c3f4-2451-4ec2-989c-1b6ee8ba7dc8
+  name: Center For Profit
+  address: elsewhere
+  phone: "0602030405"
+  created_at: 2021-10-31 18:59:59
+  updated_at: 2021-10-31 18:59:59
+
+- id: 32b2edf2-a380-4436-9f98-b70f78f1934d
+  name: Center of Light
+  address: beyond the light
+  phone: "0702030485"
+  created_at: 2011-10-31 13:59:59
+  updated_at: 2021-10-31 15:04:34
+
+- id: 10063726-d378-472c-9b50-22a48331635d
+  name: Center in the game
+  address: game time
+  phone: "0882030465"
+  created_at: 2000-10-31 10:59:59
+  updated_at: 2021-10-31 15:04:34

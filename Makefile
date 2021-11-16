@@ -31,5 +31,6 @@ vendor/migrate:
 migrations: vendor/migrate ## run migration on test db
 	./vendor/migrate -source file://db/migrations -database $(TESTDB) ${OPTS}
 
-tests: ## Run all the tests
+.PHONY: test
+test: ## Run every tests
 	echo 'mode: atomic' > coverage.txt && go test -covermode=atomic -coverprofile=coverage.txt -race -timeout=$(TESTTIMEOUT) ./...

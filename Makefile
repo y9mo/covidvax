@@ -34,3 +34,7 @@ migrations: vendor/migrate ## run migration on test db
 .PHONY: test
 test: ## Run every tests
 	echo 'mode: atomic' > coverage.txt && go test -covermode=atomic -coverprofile=coverage.txt -race -timeout=$(TESTTIMEOUT) ./...
+
+.PHONY: staticbuild
+staticbuild: ## Build a static version of the project
+	CGO_ENABLED=0 go build -ldflags '-extldflags "-static"' -ldflags "-X github.com/y9mo/$(PROJECT).Version=$(VERSION)" -v ./cmd/...

@@ -2,6 +2,22 @@ version: "3.7"
 
 services:
 
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    restart: on-failure
+    ports:
+      - ${COVIDVAX_LISTEN:-8080}:8080
+    environment:
+      COVIDVAX_PG_CONNECTION: |
+        ${COVIDVAX_PG_CONNECTION:-user=admin host=db dbname=covidvax password=admin-pwd sslmode=disable}
+      COVIDVAX_DEV: 1
+    depends_on:
+      - migrate
+    volumes:
+      - ./docker.d/iam:/docker.d/iam
+
   db:
     image: postgres:13.4-alpine
     restart: always
@@ -11,3 +27,18 @@ services:
       - "./docker.d/db/init.sql:/docker-entrypoint-initdb.d/init-db.sql"
     environment:
       POSTGRES_PASSWORD: example
+
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile.migration
+      args:
+        MIGRATE_VERSION: ${MIGRATE_VERSION:-v4.15.1}
+    restart: on-failure
+    environment:
+      COVIDVAX_PG_HOST: db
+      COVIDVAX_PG_USER: admin
+      COVIDVAX_PG_PASSWORD: admin-pwd
+      COVIDVAX_PG_DBNAME: covidvax
+    depends_on:
+      - db

@@ -1,0 +1,16 @@
+FROM golang:1.17.3-alpine3.14 AS build
+
+RUN apk add --update build-base make
+
+WORKDIR /opt/
+
+COPY . .
+
+RUN make staticbuild
+
+
+FROM scratch
+
+COPY --from=build /opt/covidvax .
+
+ENTRYPOINT ["./covidvax"]

@@ -1,0 +1,21 @@
+FROM alpine:3.14
+
+ARG MIGRATE_VERSION
+
+ENV COVIDVAX_PG_HOST localhost
+ENV COVIDVAX_PG_PORT 5432
+ENV COVIDVAX_PG_USER admin
+ENV COVIDVAX_PG_PASSWORD admin-pwd
+ENV COVIDVAX_PG_DBNAME covidvax
+ENV COVIDVAX_PG_OPTIONS sslmode=disable
+
+RUN apk --no-cache add curl && \
+  curl -L https://github.com/golang-migrate/migrate/releases/download/${MIGRATE_VERSION}/migrate.linux-amd64.tar.gz \
+  | tar xvz
+
+COPY ./db/migrations /migrations
+
+CMD /migrate \
+  -verbose \
+  -path=/migrations/ \
+  -database postgres://${COVIDVAX_PG_USER}:${COVIDVAX_PG_PASSWORD}@${COVIDVAX_PG_HOST}:${COVIDVAX_PG_PORT}/${COVIDVAX_PG_DBNAME}?${COVIDVAX_PG_OPTIONS} up
